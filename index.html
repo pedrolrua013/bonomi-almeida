@@ -402,24 +402,32 @@ body::before {
 /* H4 practice grid */
 .practice-list {
   display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 4px;
 }
 .pa-item {
-  padding: 44px 36px;
-  border-left: 1px solid rgba(0,0,0,.07);
-  border-top: 1px solid rgba(0,0,0,.07);
-  transition: background .4s;
+  padding: 40px 32px;
+  background: rgba(255,255,255,.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.88);
+  box-shadow: 0 2px 18px rgba(0,0,0,.06), 0 0 0 0.5px rgba(185,170,160,.18);
+  border-radius: 3px;
+  transition: background .35s, box-shadow .35s, transform .3s;
   cursor: default; position: relative;
-  background: var(--ivory);
 }
 .pa-item::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0;
   height: 0; background: var(--burg);
+  border-radius: 0 0 3px 3px;
   transition: height .4s cubic-bezier(.4,0,.2,1);
 }
-.pa-item:hover { background: var(--white); }
-.pa-item:hover::after { height: 2px; }
-.pa-item:nth-child(3n+1) { border-left: none; }
+.pa-item:hover {
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 6px 28px rgba(0,0,0,.1), 0 0 0 0.5px rgba(116,27,24,.15);
+  transform: translateY(-3px);
+}
+.pa-item:hover::after { height: 3px; }
 
 .pa-num {
   font-family: var(--display);
@@ -427,9 +435,10 @@ body::before {
   margin-bottom: 22px; display: block;
 }
 .pa-name {
-  font-family: var(--display);
-  font-size: 1.55rem; font-weight: 400;
-  color: var(--charcoal); line-height: 1.15; margin-bottom: 14px;
+  font-family: var(--sans);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--charcoal); line-height: 1.2; margin-bottom: 14px;
+  letter-spacing: -.01em;
 }
 .pa-list {
   list-style: none; display: flex; flex-direction: column; gap: 7px;
@@ -456,24 +465,33 @@ body::before {
     url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&auto=format&fit=crop&q=70') center/cover no-repeat;
 }
 .mod-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-  background: rgba(255,255,255,.08);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 .mod-item {
-  background: rgba(72,23,20,.0);
-  padding: 52px 40px;
-  transition: background .3s;
+  background: rgba(72,23,20,.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow: 0 4px 24px rgba(0,0,0,.22);
+  border-radius: 3px;
+  padding: 48px 36px;
+  transition: background .3s, transform .3s, box-shadow .3s;
 }
-.mod-item:hover { background: rgba(0,0,0,.15); }
+.mod-item:hover {
+  background: rgba(72,23,20,.52);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,.32);
+}
 .mod-num {
   font-family: var(--display);
   font-size: .85rem; font-weight: 500; font-style: italic;
   color: rgba(168,117,93,.72); margin-bottom: 20px; display: block;
 }
 .mod-name {
-  font-family: var(--display);
-  font-size: 1.75rem; font-weight: 400;
-  color: var(--ivory); line-height: 1.1; margin-bottom: 18px;
+  font-family: var(--sans);
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--ivory); line-height: 1.2; margin-bottom: 18px;
+  letter-spacing: -.01em;
 }
 .mod-desc {
   font-size: .97rem; line-height: 1.85; color: rgba(245,241,235,.75);
@@ -498,74 +516,38 @@ body::before {
   max-width: 320px; font-size: .92rem; line-height: 1.78; color: var(--body-txt);
 }
 .commit-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
 }
 .commit-item {
-  background: var(--ivory);
-  padding: 40px 28px;
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.86);
+  box-shadow: 0 2px 16px rgba(0,0,0,.05), 0 0 0 0.5px rgba(185,170,160,.15);
+  border-radius: 3px;
+  padding: 36px 28px;
   display: flex; flex-direction: column; gap: 14px;
-  transition: background .3s;
+  transition: box-shadow .3s, transform .3s, background .3s;
 }
-.commit-item:hover { background: var(--white); }
+.commit-item:hover {
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+  transform: translateY(-3px);
+}
 .commit-icon {
   width: 38px; height: 38px;
   border: 1px solid rgba(116,27,24,.18);
   display: grid; place-items: center; flex-shrink: 0;
 }
 .commit-head {
-  font-family: var(--display);
-  font-size: 1.2rem; font-weight: 500; color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 1rem; font-weight: 600; color: var(--charcoal);
+  letter-spacing: -.01em;
 }
 .commit-text {
   font-size: .9rem; line-height: 1.78; color: var(--body-txt);
 }
 
-/* ——————————————————————————
-   EQUIPE
-—————————————————————————— */
-.team { background: var(--ivory-dk); }
-.team-hd {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 56px; flex-wrap: wrap; gap: 24px;
-}
-.team-title {
-  font-family: var(--display);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 400; color: var(--charcoal);
-  letter-spacing: -.02em; line-height: 1.08;
-}
-.team-title em { font-style: italic; color: var(--burg); }
-.team-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-}
-.member {
-  background: var(--ivory-dk); padding: 44px 36px;
-  border-bottom: 3px solid transparent;
-  transition: background .3s, border-color .3s;
-}
-.member:hover { background: var(--ivory-dd); border-bottom-color: var(--burg); }
-.member-avatar {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: rgba(116,27,24,.1);
-  border: 1px solid rgba(116,27,24,.22);
-  display: grid; place-items: center;
-  font-family: var(--display);
-  font-size: 1.1rem; font-weight: 500; font-style: italic;
-  color: var(--copper);
-  margin-bottom: 20px;
-  flex-shrink: 0;
-}
-.member-role {
-  font-size: .68rem; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--copper); margin-bottom: 10px;
-}
-.member-name {
-  font-family: var(--display);
-  font-size: 1.6rem; font-weight: 500; color: var(--charcoal);
-  line-height: 1.15; margin-bottom: 14px;
-}
-.member-spec { font-size: .9rem; line-height: 1.75; color: var(--body-txt); }
 
 /* ——————————————————————————
    FAQ
@@ -594,9 +576,9 @@ body::before {
   font-family: var(--sans);
 }
 .faq-q-text {
-  font-family: var(--display);
-  font-size: 1.3rem; font-weight: 400;
-  color: var(--charcoal); line-height: 1.25;
+  font-family: var(--sans);
+  font-size: 1.02rem; font-weight: 500;
+  color: var(--charcoal); line-height: 1.4;
   transition: color .25s;
 }
 .faq-item.open .faq-q-text { color: var(--burg); }
@@ -777,12 +759,8 @@ footer {
   .practice-intro { text-align: left; }
   .civil-intro-inner { grid-template-columns: 1fr; gap: 16px; }
   .practice-list { grid-template-columns: 1fr 1fr; }
-  .pa-item:nth-child(3n+1) { border-left: 1px solid rgba(255,255,255,.07); }
-  .pa-item:nth-child(2n+1) { border-left: none; }
-  .mod-grid { grid-template-columns: 1fr; gap: 2px; }
+  .mod-grid { grid-template-columns: 1fr; }
   .commit-grid { grid-template-columns: 1fr 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .team-hd { flex-direction: column; align-items: flex-start; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .commit-hd { flex-direction: column; align-items: flex-start; }
   .band { padding-block: 80px; }
@@ -800,10 +778,7 @@ footer {
     padding-right: max(24px, env(safe-area-inset-right, 0px));
   }
   .practice-list { grid-template-columns: 1fr; }
-  .pa-item { border-left: none; }
-  .pa-item:nth-child(3n+1) { border-left: none; }
   .commit-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
   .hero-scroll { display: none; }
   .hero-bg-type { font-size: 65vw; right: -18%; }
   .wa-tip { display: none; }
@@ -1101,52 +1076,6 @@ footer {
   </div>
 </section>
 
-<!-- EQUIPE BANNER PHOTO -->
-<div style="height:340px;overflow:hidden;position:relative;">
-  <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1600&auto=format&fit=crop&q=80"
-       alt="" aria-hidden="true" loading="lazy"
-       style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:brightness(.88) saturate(.85);">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 50%, var(--ivory-dk) 100%);"></div>
-</div>
-
-<!-- EQUIPE -->
-<section class="band team" id="equipe" aria-labelledby="h2-equipe" style="padding-top:56px;">
-  <div class="inner">
-    <div class="team-hd">
-      <div>
-        <div class="sec-label r" style="margin-bottom:18px">
-          <span class="sec-num">04</span>
-          <span class="sec-rule"></span>
-          <span class="sec-tag">A Equipe</span>
-        </div>
-        <h2 class="team-title r" id="h2-equipe">
-          Profissionais com<br><em>vocação jurídica</em>
-        </h2>
-      </div>
-    </div>
-
-    <div class="team-grid">
-      <article class="member r">
-        <div class="member-avatar" aria-hidden="true">RB</div>
-        <div class="member-role">Sócio Fundador</div>
-        <div class="member-name">Dr. Ricardo Bonomi</div>
-        <p class="member-spec">Direito Civil · Direito Imobiliário · Direito de Família e Sucessões</p>
-      </article>
-      <article class="member r d1">
-        <div class="member-avatar" aria-hidden="true">MA</div>
-        <div class="member-role">Sócio Fundador</div>
-        <div class="member-name">Dr. Marcelo Almeida</div>
-        <p class="member-spec">Relações de Consumo · Direito Civil · Contencioso Cível</p>
-      </article>
-      <article class="member r d2">
-        <div class="member-avatar" aria-hidden="true">FC</div>
-        <div class="member-role">Advogada</div>
-        <div class="member-name">Dra. Fernanda Costa</div>
-        <p class="member-spec">Direito de Família · Inventários · Planejamento Sucessório</p>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- H2 — FAQ -->
 <section class="band faq" id="faq" aria-labelledby="h2-faq">
