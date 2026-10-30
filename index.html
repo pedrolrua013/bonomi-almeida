@@ -573,6 +573,73 @@ body::before {
 
 
 /* ——————————————————————————
+   SÓCIO
+—————————————————————————— */
+.partner { background: var(--ivory-dk); }
+.partner-grid {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(48px, 7vw, 96px);
+  align-items: center;
+}
+.partner-photo-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  max-height: 560px;
+  overflow: hidden;
+}
+.partner-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -14px 14px 14px -14px;
+  border: 1px solid rgba(116,27,24,.22);
+  z-index: -1;
+  pointer-events: none;
+}
+.partner-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 68% 12%;
+  display: block;
+  transition: transform .8s cubic-bezier(.4,0,.2,1);
+}
+.partner-photo-wrap:hover img { transform: scale(1.03); }
+.partner-badge {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 60px 28px 26px;
+  background: linear-gradient(to top, rgba(36,10,9,.88) 0%, rgba(36,10,9,.3) 60%, transparent 100%);
+}
+.partner-badge-name {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.35rem; font-weight: 500;
+  color: var(--ivory); letter-spacing: -.01em;
+  line-height: 1.2; margin-bottom: 5px;
+}
+.partner-badge-role {
+  display: block;
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(245,241,235,.62);
+}
+.partner-name {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 400; color: var(--charcoal);
+  letter-spacing: -.025em; line-height: 1.07;
+  margin-bottom: 10px;
+}
+.partner-name em { font-style: italic; color: var(--burg); }
+.partner-role-tag {
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 32px; display: block;
+}
+.partner-copy { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.partner-copy p { font-size: 1rem; line-height: 1.78; color: var(--body-txt); }
+
+/* ——————————————————————————
    FAQ
 —————————————————————————— */
 .faq { background: var(--ivory); }
@@ -787,6 +854,9 @@ footer {
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .commit-hd { flex-direction: column; align-items: flex-start; }
   .band { padding-block: 80px; }
+  .partner-grid { grid-template-columns: 1fr; gap: 40px; }
+  .partner-photo-wrap { max-height: 420px; aspect-ratio: 4/3; }
+  .partner-photo-wrap::before { display: none; }
 }
 
 @media (max-width: 560px) {
@@ -935,6 +1005,44 @@ footer {
           <p class="about-sig">Bonomi Almeida Advogados</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SÓCIO -->
+<section class="band partner" id="socio" aria-labelledby="h2-socio">
+  <div class="inner">
+    <div class="partner-grid">
+
+      <!-- Foto -->
+      <div class="partner-photo-wrap r">
+        <img
+          src="assets/alexandre-bonomi.jpg"
+          alt="Alexandre Bonomi, advogado e sócio fundador do Bonomi Almeida Advogados em Santos, SP"
+          width="720" height="960"
+          loading="lazy">
+        <div class="partner-badge">
+          <span class="partner-badge-name">Alexandre Bonomi</span>
+          <span class="partner-badge-role">Sócio Fundador · OAB/SP</span>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="r d1">
+        <div class="sec-label" style="margin-bottom:28px">
+          <span class="sec-num">01.1</span>
+          <span class="sec-rule"></span>
+          <span class="sec-tag">Liderança</span>
+        </div>
+        <h2 class="partner-name" id="h2-socio">Alexandre <em>Bonomi</em></h2>
+        <span class="partner-role-tag">Advogado · Sócio Fundador · OAB/SP</span>
+        <div class="partner-copy">
+          <p>Com formação sólida e genuína vocação pelo direito civil, Alexandre Bonomi fundou o escritório com o propósito de oferecer assessoria jurídica que alia rigor técnico a um atendimento verdadeiramente humano e próximo.</p>
+          <p>Atua com foco em Direito Imobiliário, Direito de Família e Sucessões, Relações de Consumo e Contratos — sempre orientado pela clareza na comunicação, pela organização e pela atenção individualizada a cada caso.</p>
+          <p>Acredita que a relação de confiança entre advogado e cliente é o alicerce de qualquer trabalho jurídico bem-feito.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
