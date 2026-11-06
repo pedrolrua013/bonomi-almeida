@@ -28,6 +28,7 @@
 <link rel="apple-touch-icon" href="favicon.svg">
 <meta name="theme-color" content="#741B18">
 
+<link rel="preload" as="image" href="assets/hero-escritorio.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap">
@@ -156,8 +157,8 @@ body::before {
   position: relative;
   min-height: 100svh;
   background:
-    linear-gradient(170deg, rgba(72,23,20,.88) 0%, rgba(36,10,9,.97) 100%),
-    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&auto=format&fit=crop&q=75') center/cover no-repeat;
+    linear-gradient(170deg, rgba(72,23,20,.70) 0%, rgba(36,10,9,.94) 100%),
+    url('assets/hero-escritorio.webp') 72% center/cover no-repeat;
   display: flex; flex-direction: column; justify-content: flex-end;
   overflow: hidden;
   padding: 0 max(48px, env(safe-area-inset-left, 0px));
@@ -455,6 +456,19 @@ body::before {
 }
 .pa-item:hover::after { height: 3px; }
 
+.pa-media {
+  margin: -40px -32px 28px;
+  aspect-ratio: 3/2; overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  background: var(--ivory-dd);
+}
+.pa-media img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .7s cubic-bezier(.4,0,.2,1);
+}
+.pa-item:hover .pa-media img { transform: scale(1.04); }
+
 .pa-num {
   font-family: var(--display);
   font-size: .85rem; font-weight: 500; color: var(--copper);
@@ -488,7 +502,7 @@ body::before {
 .modalities {
   background:
     linear-gradient(135deg, rgba(72,23,20,.92) 0%, rgba(116,27,24,.88) 100%),
-    url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&auto=format&fit=crop&q=70') center/cover no-repeat;
+    url('assets/modalidades-mesa.webp') center/cover no-repeat;
 }
 .mod-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
@@ -541,6 +555,21 @@ body::before {
 .commit-lead {
   max-width: 320px; font-size: .92rem; line-height: 1.78; color: var(--body-txt);
 }
+.commit-visual {
+  position: relative; overflow: hidden;
+  aspect-ratio: 21/9; margin: 0 0 16px;
+  border: 1px solid rgba(116,27,24,.28);
+  border-radius: 6px;
+  box-shadow: 0 2px 20px rgba(116,27,24,.08);
+  background: var(--ivory-dd);
+}
+.commit-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 38%;
+  display: block;
+  transition: transform .7s cubic-bezier(.4,0,.2,1);
+}
+.commit-visual:hover img { transform: scale(1.03); }
 .commit-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
 }
@@ -854,6 +883,7 @@ footer {
   .practice-list { grid-template-columns: 1fr 1fr; }
   .mod-grid { grid-template-columns: 1fr; }
   .commit-grid { grid-template-columns: 1fr 1fr; }
+  .commit-visual { aspect-ratio: 16/9; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .commit-hd { flex-direction: column; align-items: flex-start; }
   .band { padding-block: 80px; }
@@ -875,6 +905,9 @@ footer {
   }
   .practice-list { grid-template-columns: 1fr; }
   .commit-grid { grid-template-columns: 1fr; }
+  .commit-visual { aspect-ratio: 4/3; }
+  .commit-visual img { object-position: 42% 40%; }
+  .hero { background-position: center, 78% center; }
   .hero-scroll { display: none; }
   .hero-bg-type { font-size: 65vw; right: -18%; }
   .wa-tip { display: none; }
@@ -1040,6 +1073,7 @@ footer {
     <!-- H4 cards -->
     <div class="practice-list">
       <article class="pa-item r">
+        <figure class="pa-media"><img src="assets/area-imobiliario.webp" alt="Casal revisando contrato de compra de imóvel com as chaves sobre a mesa" width="960" height="536" loading="lazy" decoding="async"></figure>
         <span class="pa-num" aria-hidden="true">01</span>
         <h4 class="pa-name">Direito Imobiliário</h4>
         <ul class="pa-list" aria-label="Serviços de Direito Imobiliário">
@@ -1054,6 +1088,7 @@ footer {
         </ul>
       </article>
       <article class="pa-item r d1">
+        <figure class="pa-media"><img src="assets/area-consumo.webp" alt="Mulher organizando contas e extratos bancários na mesa da cozinha" width="960" height="536" loading="lazy" decoding="async"></figure>
         <span class="pa-num" aria-hidden="true">02</span>
         <h4 class="pa-name">Relações de Consumo</h4>
         <ul class="pa-list" aria-label="Serviços de Relações de Consumo">
@@ -1068,6 +1103,7 @@ footer {
         </ul>
       </article>
       <article class="pa-item r d2">
+        <figure class="pa-media"><img src="assets/area-familia.webp" alt="Mão de uma senhora sobre a mão do filho, apoiadas em uma pasta de documentos da família" width="960" height="536" loading="lazy" decoding="async"></figure>
         <span class="pa-num" aria-hidden="true">03</span>
         <h4 class="pa-name">Família e Sucessões</h4>
         <ul class="pa-list" aria-label="Serviços de Direito de Família e Sucessões">
@@ -1127,6 +1163,9 @@ footer {
       <p class="commit-lead r d1">Mais do que prestar serviços jurídicos, queremos ser o advogado de confiança que você e a sua família podem encontrar sempre que precisarem.</p>
     </div>
 
+    <figure class="commit-visual r">
+      <img src="assets/compromisso-atendimento.webp" alt="Advogado ouvindo com atenção uma cliente durante atendimento no escritório" width="1800" height="1005" loading="lazy" decoding="async">
+    </figure>
     <div class="commit-grid">
       <div class="commit-item r">
         <div class="commit-icon" aria-hidden="true">
