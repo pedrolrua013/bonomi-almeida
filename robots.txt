@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pedrolrua013.github.io/bonomi-almeida/sitemap.xml
+Sitemap: https://bonomi-almeida.vercel.app/sitemap.xml

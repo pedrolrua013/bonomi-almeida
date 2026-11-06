@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://pedrolrua013.github.io/bonomi-almeida/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <loc>https://bonomi-almeida.vercel.app/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&amp;auto=format&amp;fit=crop&amp;q=80</image:loc>
+      <image:loc>https://bonomi-almeida.vercel.app/assets/hero-escritorio.webp</image:loc>
       <image:title>Escritório de advocacia Bonomi Almeida — Santos, SP</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&amp;auto=format&amp;fit=crop&amp;q=82</image:loc>
+      <image:loc>https://bonomi-almeida.vercel.app/assets/compromisso-atendimento.webp</image:loc>
       <image:title>Reunião de orientação jurídica — Bonomi Almeida Advogados</image:title>
     </image:image>
   </url>
