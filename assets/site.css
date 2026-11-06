@@ -924,3 +924,8 @@ footer {
   color: rgba(245,241,235,.5); text-decoration: none; transition: color .2s;
 }
 .footer-links a:hover { color: var(--ivory); }
+
+@media (max-width: 380px) {
+  .eyebrow-text { letter-spacing: .12em; }
+  .eyebrow-bar { width: 24px; }
+}

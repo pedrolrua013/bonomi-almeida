@@ -8,7 +8,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://bonomi-almeida.vercel.app/assets/hero-escritorio.webp</image:loc>
-      <image:title>Escritório de advocacia Bonomi Almeida — Santos, SP</image:title>
+      <image:title>Escritório de advocacia Bonomi Almeida — Estado de São Paulo</image:title>
     </image:image>
     <image:image>
       <image:loc>https://bonomi-almeida.vercel.app/assets/compromisso-atendimento.webp</image:loc>
@@ -22,7 +22,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://bonomi-almeida.vercel.app/assets/area-imobiliario-hero.webp</image:loc>
-      <image:title>Direito Imobiliário em Santos — Bonomi Almeida Advogados</image:title>
+      <image:title>Direito Imobiliário em São Paulo — Bonomi Almeida Advogados</image:title>
     </image:image>
   </url>
   <url>
@@ -32,7 +32,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://bonomi-almeida.vercel.app/assets/area-consumo-hero.webp</image:loc>
-      <image:title>Relações de Consumo em Santos — Bonomi Almeida Advogados</image:title>
+      <image:title>Relações de Consumo em São Paulo — Bonomi Almeida Advogados</image:title>
     </image:image>
   </url>
   <url>
@@ -42,7 +42,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://bonomi-almeida.vercel.app/assets/area-familia-hero.webp</image:loc>
-      <image:title>Família e Sucessões em Santos — Bonomi Almeida Advogados</image:title>
+      <image:title>Família e Sucessões em São Paulo — Bonomi Almeida Advogados</image:title>
     </image:image>
   </url>
 </urlset>
