@@ -436,22 +436,24 @@ body::before {
   background: rgba(255,255,255,.68);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.88);
-  box-shadow: 0 2px 18px rgba(0,0,0,.06), 0 0 0 0.5px rgba(185,170,160,.18);
-  border-radius: 3px;
-  transition: background .35s, box-shadow .35s, transform .3s;
+  border: 1px solid rgba(116,27,24,.24);
+  box-shadow: 0 2px 18px rgba(116,27,24,.06);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: background .35s, box-shadow .35s, transform .3s, border-color .35s;
   cursor: default; position: relative;
 }
 .pa-item::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0;
   height: 0; background: var(--burg);
-  border-radius: 0 0 3px 3px;
+  border-radius: 0;
   transition: height .4s cubic-bezier(.4,0,.2,1);
 }
 .pa-item:hover {
   background: rgba(255,255,255,.92);
-  box-shadow: 0 6px 28px rgba(0,0,0,.1), 0 0 0 0.5px rgba(116,27,24,.15);
+  border-color: rgba(116,27,24,.55);
+  box-shadow: 0 8px 28px rgba(116,27,24,.12);
   transform: translateY(-3px);
 }
 .pa-item:hover::after { height: 3px; }
@@ -459,7 +461,8 @@ body::before {
 .pa-media {
   margin: -40px -32px 28px;
   aspect-ratio: 3/2; overflow: hidden;
-  border-radius: 3px 3px 0 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(116,27,24,.16);
   background: var(--ivory-dd);
 }
 .pa-media img {
@@ -511,14 +514,15 @@ body::before {
   background: rgba(72,23,20,.32);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,.13);
+  border: 1px solid rgba(214,140,128,.32);
   box-shadow: 0 4px 24px rgba(0,0,0,.22);
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 48px 36px;
-  transition: background .3s, transform .3s, box-shadow .3s;
+  transition: background .3s, transform .3s, box-shadow .3s, border-color .3s;
 }
 .mod-item:hover {
   background: rgba(72,23,20,.52);
+  border-color: rgba(214,140,128,.6);
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(0,0,0,.32);
 }
@@ -577,16 +581,17 @@ body::before {
   background: rgba(255,255,255,.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.86);
-  box-shadow: 0 2px 16px rgba(0,0,0,.05), 0 0 0 0.5px rgba(185,170,160,.15);
-  border-radius: 3px;
+  border: 1px solid rgba(116,27,24,.24);
+  box-shadow: 0 2px 16px rgba(116,27,24,.05);
+  border-radius: 6px;
   padding: 36px 28px;
   display: flex; flex-direction: column; gap: 14px;
-  transition: box-shadow .3s, transform .3s, background .3s;
+  transition: box-shadow .3s, transform .3s, background .3s, border-color .3s;
 }
 .commit-item:hover {
   background: rgba(255,255,255,.9);
-  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+  border-color: rgba(116,27,24,.55);
+  box-shadow: 0 8px 26px rgba(116,27,24,.11);
   transform: translateY(-3px);
 }
 .commit-icon {
