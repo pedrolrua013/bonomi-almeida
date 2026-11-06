@@ -148,7 +148,10 @@
   background: var(--burg);
   transition: width .55s cubic-bezier(.4,0,.2,1), height .55s cubic-bezier(.4,0,.2,1);
 }
-.tl-step { position: relative; z-index: 1; outline: none; cursor: default; }
+.tl-step {
+  position: relative; z-index: 1; outline: none; cursor: default;
+  display: flex; flex-direction: column;
+}
 .tl-dot {
   display: grid; place-items: center;
   width: var(--dot); height: var(--dot); border-radius: 50%;
@@ -164,6 +167,7 @@
   border-radius: 6px;
   box-shadow: 0 2px 16px rgba(116,27,24,.05);
   padding: 30px 26px;
+  flex: 1;
   display: flex; flex-direction: column; gap: 12px;
   transition: border-color .4s, box-shadow .4s, transform .4s, background .4s;
 }
@@ -176,7 +180,6 @@
 }
 .tl-step.is-done .tl-card { border-color: rgba(116,27,24,.5); background: rgba(255,255,255,.9); }
 .tl-step.is-current .tl-card {
-  transform: translateY(-3px);
   box-shadow: 0 8px 26px rgba(116,27,24,.11);
 }
 
